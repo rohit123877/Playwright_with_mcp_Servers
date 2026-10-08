@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="DemoWebShop Parallel Test Suite" parallel="classes" thread-count="2">
+
+    <!-- Configure Listeners -->
+    <listeners>
+        <listener class-name="com.demowebshop.listeners.TestListener" />
+    </listeners>
+
+    <!-- Configure Test Run Details -->
+    <test name="Chrome Functional Tests">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.demowebshop.tests.LoginTest" />
+            <class name="com.demowebshop.tests.SearchTest" />
+            <class name="com.demowebshop.tests.DataDrivenLoginTest" />
+            <class name="com.demowebshop.tests.RegistrationLoginTest" />
+        </classes>
+    </test>
+</suite>
